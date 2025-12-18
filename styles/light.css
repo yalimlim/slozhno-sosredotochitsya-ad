@@ -16,7 +16,7 @@
 
     --page-bg-color: var(--background-color);
     --header-text-bg-color: var(--accent-color);
-    --header_text-color: var(--background-color);
+    --header-text-color: var(--answer-text-color);
     --question-color: var(--answer-text-color);
     --advice-title-color: var(--answer-text-color);
     --advice-title-bg-color: var(--accent-color);

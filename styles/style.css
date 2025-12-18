@@ -119,9 +119,9 @@ header {
 .header_text {
     color: var(--header-text-color);
     background-color: var(--header-text-bg-color);
-    font-weight: bold;
     font-size: inherit;
     font: inherit;
+    font-weight: bold;
     margin: var(--decoration-gap);
 }
 
@@ -196,6 +196,7 @@ section {
 .answer_text {
     color: var(--answer-text-color);
     font-weight: normal;
+    line-height: 1.3;
 }
 
 .advice_title {
@@ -210,7 +211,7 @@ section {
 }
 
 .advice_title_main {
-    margin-block-start: 20px;
+    margin-block-start: 19px;
     margin-block-end: 20px;
 }
 
@@ -250,7 +251,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-block-start: 32px;
+    margin-block-start: 30px;
+    margin-inline-end: 10px;
 }
 
 @media (width >= 768px) {
@@ -429,6 +431,6 @@ footer {
 
     footer {
         margin-block-start: 50px;
-        --min-height: 768px;
+        min-height: 768px;
     }
 }

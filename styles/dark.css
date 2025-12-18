@@ -15,7 +15,7 @@
 
     --page-bg-color: var(--background-color);
     --header-text-bg-color: var(--accent-color);
-    --header_text-color: var(--background-color);
+    --header-text-color: var(--background-color);
     --question-color: var(--accent-color);
     --advice-title-color: var(--background-color);
     --advice-title-bg-color: var(--accent-color);
@@ -66,12 +66,4 @@
     .rec_empty::after {
         display: inline-block;
     }
-} */
-
-/* .theme-dark .rec_empty::before {
-    display: inline-block;
-}
-
-.theme-dark .rec_empty::after {
-    display: inline-block;
 } */
