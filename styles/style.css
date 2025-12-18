@@ -1,5 +1,434 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+    font-family: var(--font-family);
+    font-size: var(--base-font-size);
+    background-color: var(--page-bg-color);
+    background-image: var(--background-image);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.decorated-zone::before {
+    content: "";
+    position: absolute;
+    inline-size: 25px;
+    block-size: 25px;
+    border-block-start: 1px solid var(--decoration-color);
+    border-inline-end: 1px solid var(--decoration-color);
+    top: var(--decoration-gap);
+    right: var(--decoration-gap);
+}
+
+.decorated-zone::after {
+    content: "";
+    position: absolute;
+    inline-size: 25px;
+    block-size: 25px;
+    border-block-end: 1px solid var(--decoration-color);
+    border-inline-start: 1px solid var(--decoration-color);
+    left: var(--decoration-gap);
+    bottom: var(--decoration-gap);
+}
+
+
+
+
+
+header {
+    display: grid;
+    block-size: 100vh;
+    min-block-size: 668px;
+    font: inherit;
+    position: relative;
+    align-items: center;
+    padding: var(--decoration-gap) 0;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-columns: 1fr; /* fr - это 1 доля от свободного элемента */
+}
+
+.rec-elem {
+    visibility: var(--is-dark);
+    color: var(--rec-color);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-self: end;
+    position: absolute;
+    block-size: 25px;
+    text-transform: uppercase;
+    line-height: 25px;
+    gap: 10px;
+    top: var(--decoration-gap);
+    right: var(--decoration-gap);
+}
+
+.rec-elem::after {
+    content: "";
+    align-self: center;
+    background-color: var(--rec-color);
+    border-radius: 50%;
+    inline-size: 9px;
+    block-size: 9px;
+    margin-inline-end: 9px;
+    box-shadow: 0 0 4px 2px var(--rec-color);
+}
+
+
+
+.header__theme-menu {
+    margin: auto var(--decoration-gap);
+    justify-self: end;
+}
+
+.header__theme-menu-button {
+    color: var(--button-color);
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    text-transform: lowercase;
+    font-size: var(--base-font-size);
+    line-height: var(--regular-line-height);
+    padding: 4px 13px;
+}
+
+.header__theme-menu-button_active {
+    pointer-events: none;
+    border: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button:focus-visible {
+    border: none;
+    outline: none;
+    border-block-end: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button:focus {
+    outline: none;
+}
+
+.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+    border: 1px solid var(--border-color-opacity);
+}
+
+.header__theme-menu-list {
+    display: grid;
+    gap: 10px;
+}
+
+
+.header_text {
+    color: var(--header-text-color);
+    background-color: var(--header-text-bg-color);
+    font-weight: bold;
+    font-size: inherit;
+    font: inherit;
+    margin: var(--decoration-gap);
+}
+
+.just-main {
+    margin-inline-end: var(--decoration-gap);
+    margin-inline-start: var(--decoration-gap);
+}
+
+section {
+    display: grid;
+    margin-block-start: 40px;
+    grid-template-columns: 1fr;
+}
+
+.section_why {
+    margin-block-start: var(--section-child-margin);
+}
+
+.section_what,
+.section_how,
+.gallery_section {
+    margin-block-start: 50px;
+}
+
+.gallery_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+}
+
+.gallery_image {
+    display: block;
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+}
+
+.gallery_item {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.header_title {
+    color: var(--title-color);
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: 0.825;
+    text-shadow: 4px 4px 0 var(--accent-color);
+    margin-inline-start: var(--header-margin-left);
+}
+
+.question {
+    color: var(--question-color);
+    font-size: var(--base-font-size);
+    line-height: 1.3;
+    inline-size: 100%;
+}
+
+.answer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-block-start: 20px;
+}
+
+.answer_title {
+    color: var(--answer-title-color);
+    background-color: var(--answer-title-bg-color);
+    font-size: inherit;
+}
+
+.answer_text {
+    color: var(--answer-text-color);
+    font-weight: normal;
+}
+
+.advice_title {
+    color: var(--advice-title-color);
+    background-color: var(--advice-title-bg-color);
+    font-size: var(--base-font-size);
+    line-height: 1.3;
+    font-weight: normal;
+    margin-block-start: 20px;
+    margin-block-end: 10px;
+    inline-size: 100%;
+}
+
+.advice_title_main {
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+}
+
+.simple_link {
+    text-shadow: 2px 1px 0 var(--accent-color);
+    text-decoration: none;
+}
+
+.simple_link:focus {
+    outline: none;
+}
+
+.simple_link:focus-visible {
+    outline: 1px solid currentColor;
+}
+
+.simple_link:hover {
+    border-block-end: 1px solid currentColor;
+    cursor: pointer;
+}
+
+.picture_question {
+    margin-block-end: 10px;
+}
+
+
+
+
+
+footer {
+    position: relative;
+    block-size: max(100vh, var(--min-height));
+}
+
+.footer_title {
+    block-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block-start: 32px;
+}
+
+@media (width >= 768px) {
+    header {
+        margin-block-end: 40px;
+        min-height: 1024px;
+    }
+
+    .header_title {
+        font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); /*магия яндекса*/
+    }
+
+    .header_text {
+        inline-size: calc(50% - 20px);
+        justify-self: right;
+    }
+
+    .section_why {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .question_why {
+        grid-column: 1 / 2;
+    }
+
+    .answers_why {
+        grid-column: 2 / 3;
+    }
+
+    .section_what {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+    
+    .question_what {
+        margin-block-start: 30px;
+        inline-size: 30%;
+    }
+
+    .section_how {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-block-start: 61px;
+        gap: 20px;
+    }
+
+    .question_how {
+        margin-block-start: 20px;
+        grid-column: 1 / 2;
+    }
+
+    .answers_how {
+        grid-column: 2 / 3;
+    }
+
+
+    .gallery_section {
+        margin-block-start: 78px;
+    }
+
+    .gallery_list {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        margin-block-start: 20px;
+        gap: 20px;
+    }
+
+    .gallery_item {
+        margin: 0;
+    }
+
+    .picture_question {
+        grid-column: 1 / 4;
+        margin-block-end: 0;
+    }
+
+    .sunset_pic {
+        grid-column: 1 / 3;
+    }
+
+    .ice-cream_pic {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+
+    .tape_pic {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+    }
+
+    .books_pic {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .street_pic {
+        grid-column: 2 / 4;
+        grid-row: 3 / 4;
+    }
+
+    .footer_title {
+        justify-content: center;
+        margin-block-start: 62px;
+    }
+}
+
+@media (width >= 1024px) {
+    .decorated-zone::after {
+        bottom: 20px;
+    }
+
+    header {
+        margin-block-end: 0;
+        min-height: 768px;
+    }
+
+    .header__theme-menu {
+        block-size: 100%;
+        display: flex;
+        justify-self: center;
+        flex-direction: column;
+        align-self: start;
+    }
+
+    .header__theme-menu-list {
+        grid-auto-flow: column;
+    }
+
+    .header_text,
+    .question_why {
+        margin-block-start: 20px;
+    }
+
+    .header_title {
+        margin-inline-start: 0;
+    }
+
+    .answers_why {
+        margin-block-start: 0px;
+    }
+
+    .section_why {
+        margin-block-start: 40px;
+        gap: 10px;
+    }
+
+    .section_how {
+        gap: 10px;
+    }
+
+    .section_what {
+        margin-block-start: 50px;
+    }
+
+    .question_what {
+        display: block;
+        inline-size: 30%;
+        grid-area: question_what;
+    }
+
+    .answers_what {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        grid-area: answers_what;
+        margin-block-start: 77px;
+    }
+
+    title {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    footer {
+        margin-block-start: 50px;
+        --min-height: 768px;
+    }
 }

@@ -4,13 +4,74 @@
   переключая тему
 */
 
+
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+    --is-dark: visible;
+    --accent-color: #ff0070;
+    --title-color: #db00ff;
+    --answer-text-color: #f1b2ce;
+    --border-color-opacity: #ff007066;
+    --background-color: #000028;
+
+    --page-bg-color: var(--background-color);
+    --header-text-bg-color: var(--accent-color);
+    --header_text-color: var(--background-color);
+    --question-color: var(--accent-color);
+    --advice-title-color: var(--background-color);
+    --advice-title-bg-color: var(--accent-color);
+    --button-color: var(--accent-color);
+    --rec-color: var(--accent-color);
+    --answer-title-bg-color: var(--accent-color);
+    --decoration-color: var(--accent-color);
+    --background-image: url("../images/cover-image-dark.png");
+    --question-bg-color: var(--background-color);
+    --answer-title-color: var(--background-color);
+    --answer-text-bg-color: var(--background-color);
 }
 
 .theme-dark .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
+
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+    --is-dark: visible;
+    --accent-color: #ff0070;
+    --title-color: #db00ff;
+    --answer-text-color: #f1b2ce;
+    --border-color-opacity: #ff007066;
+    --background-color: #000028;
+
+    --page-bg-color: var(--background-color);
+    --header-text-bg-color: var(--accent-color);
+    --header_text-color: var(--background-color);
+    --question-color: var(--accent-color);
+    --advice-title-color: var(--background-color);
+    --advice-title-bg-color: var(--accent-color);
+    --button-color: var(--accent-color);
+    --rec-color: var(--accent-color);
+    --answer-title-bg-color: var(--accent-color);
+    --decoration-color: var(--accent-color);
+    --background-image: url("../images/cover-image-dark.png");
+    --question-bg-color: var(--background-color);
+    --answer-title-color: var(--background-color);
+    --answer-text-bg-color: var(--background-color);
+    }
+
+    .rec_empty::before {
+        display: inline-block;
+    }
+
+    .rec_empty::after {
+        display: inline-block;
+    }
+} */
+
+/* .theme-dark .rec_empty::before {
+    display: inline-block;
+}
+
+.theme-dark .rec_empty::after {
+    display: inline-block;
+} */

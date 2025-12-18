@@ -4,13 +4,59 @@
   переключая тему
 */
 
+
+
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+    --is-dark: hidden;
+    --accent-color: #ff8dcb;
+    --title-color: #ffc2e6;
+    --answer-text-color: #353430;
+    --border-color-opacity: #32312d66;
+    --background-color: #fff1f7;
+
+    --page-bg-color: var(--background-color);
+    --header-text-bg-color: var(--accent-color);
+    --header_text-color: var(--background-color);
+    --question-color: var(--answer-text-color);
+    --advice-title-color: var(--answer-text-color);
+    --advice-title-bg-color: var(--accent-color);
+    --button-color: var(--answer-text-color);
+    --rec-color: var(--accent-color);
+    --answer-title-bg-color: var(--accent-color);
+    --decoration-color: var(--answer-text-color);
+    --background-image: url("../images/cover-image-light.png");
+    --question-bg-color: var(--background-color);
+    --answer-title-color: var(--answer-text-color);
+    --answer-text-bg-color: var(--background-color);
 }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+    --is-dark: hidden;
+    --accent-color: #ff8dcb;
+    --title-color: #ffc2e6;
+    --answer-text-color: #353430;
+    --border-color-opacity: #32312d66;
+    --background-color: #fff1f7;
+
+    --page-bg-color: var(--background-color);
+    --header-text-bg-color: var(--accent-color);
+    --header_text-color: var(--background-color);
+    --question-color: var(--answer-text-color);
+    --advice-title-color: var(--answer-text-color);
+    --advice-title-bg-color: var(--accent-color);
+    --button-color: var(--answer-text-color);
+    --rec-color: var(--accent-color);
+    --answer-title-bg-color: var(--accent-color);
+    --decoration-color: var(--answer-text-color);
+    --background-image: url("../images/cover-image-light.png");
+    --question-bg-color: var(--background-color);
+    --answer-title-color: var(--answer-text-color);
+    --answer-text-bg-color: var(--background-color);
+    /* Автоматически применяет светлую тему, если пользователь предпочитает ее в настройках ОС браузера. */
+    }
 }
